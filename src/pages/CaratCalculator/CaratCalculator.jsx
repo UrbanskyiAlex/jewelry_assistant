@@ -84,7 +84,7 @@ function CaratCalculator() {
         <div className="total-holder__title">Загальна вага металу:</div>
         <div className="total-holder__value">
           {Math.floor(totalWeight * 100) / 100 +
-            Math.floor(currentMetalWeight * 100) / 100}
+            Math.floor(currentMetalWeight * 100) / 100}{" "}
           g
         </div>
       </div>
