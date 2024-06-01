@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./CaratCalculator.css";
+import CalcInput from "../../components/CalcInput/CalcInput";
 
 function CaratCalculator() {
   const [currentMetalCarat, setCurrentMetalCarat] = useState("");
   const [currentMetalWeight, setCurrentMetalWeight] = useState("");
-
   const [requiredCarat, setRequiredCarat] = useState("");
   const [addedMetalCarat, setAddedMetalCarat] = useState("");
   const [totalWeight, setTotalWeight] = useState(0);
@@ -33,42 +33,18 @@ function CaratCalculator() {
   };
 
   return (
-    <div className="carat">
-      <h1>Калькулятор проб</h1>
-
-      <div>
-        <p className="title">Введіть пробу металу яку потрібно переплавити:</p>
-        <label for="current_metal_carat" className="input_lable">
-          Проба
-        </label>
-        <input
-          id="current_metal_carat"
-          type="number"
-          value={currentMetalCarat}
-          onKeyDown={handleKeyDown}
-          onChange={(e) => {
-            const inputValue = e.target.value;
-
-            // Видаляємо непотрібні символи
-            if (/[^0-9]/.test(inputValue)) {
-              return;
-            }
-
-            // Перевіряємо діапазон від 0 до 999
-            if (
-              inputValue === "" ||
-              (Number(inputValue) >= 0 && Number(inputValue) <= 999)
-            ) {
-              setCurrentMetalCarat(inputValue);
-            }
-          }}
-          placeholder="проба металу..."
-        />
-      </div>
-      <div>
-        <p className="title">Введіть вагу металу яку потрібно переплавити:</p>
-        <label for="current_metal_weight" className="input_lable">
-          Вага
+    <div className="carat-calc">
+      <h1 className="carat-calc__title">Калькулятор проб</h1>
+      <CalcInput
+        value={currentMetalCarat}
+        onChangeValue={setCurrentMetalCarat}
+        placeholder={"проба..."}
+        title={"Введіть пробу металу яку потрібно переплавити:"}
+        label={"current_metal_carat"}
+      />
+      <div className="carat-calc__inputHolder">
+        <label for="current_metal_weight" className="carat-calc__input-lable">
+          Введіть вагу металу яку потрібно переплавити:
         </label>
         <input
           id="current_metal_weight"
@@ -76,71 +52,40 @@ function CaratCalculator() {
           onKeyDown={handleKeyDown}
           placeholder="вага металу..."
           onChange={(e) => setCurrentMetalWeight(e.target.value)}
+          className="carat-calc__input"
         />
       </div>
+      <CalcInput
+        value={requiredCarat}
+        onChangeValue={setRequiredCarat}
+        placeholder={"проба..."}
+        title={"Введіть пробу металу яку потрібно отримати:"}
+        label={"required_metal_carat"}
+      />
 
-      <div>
-        <p className="title">Введіть пробу металу яку потрібно отримати:</p>
-        <label for="required_metal_carat" className="input_lable">
-          Необхідна проба
-        </label>
-        <input
-          id="required_metal_carat"
-          type="number"
-          value={requiredCarat}
-          onKeyDown={handleKeyDown}
-          onChange={(e) => {
-            const inputValue = e.target.value;
-
-            // Видаляємо непотрібні символи
-            if (/[^0-9]/.test(inputValue)) {
-              return;
-            }
-
-            // Перевіряємо діапазон від 0 до 999
-            if (
-              inputValue === "" ||
-              (Number(inputValue) >= 0 && Number(inputValue) <= 999)
-            ) {
-              setRequiredCarat(inputValue);
-            }
-          }}
-          placeholder="необхідна проба металу..."
-        />
-      </div>
-      <div>
-        <p className="title">
-          Введіть пробу металу який додається(якщо 0 то це означає лігатура):
-        </p>
-        <label for="added_metal_carat" className="input_lable">
-          Проба лигуючого металу
-        </label>
-        <input
-          id="added_metal_carat"
-          type="number"
-          onKeyDown={handleKeyDown}
-          value={addedMetalCarat}
-          onChange={(e) => {
-            const inputValue = e.target.value;
-
-            // Видаляємо непотрібні символи
-            if (/[^0-9]/.test(inputValue)) {
-              return;
-            }
-
-            // Перевіряємо діапазон від 0 до 999
-            if (
-              inputValue === "" ||
-              (Number(inputValue) >= 0 && Number(inputValue) <= 999)
-            ) {
-              setAddedMetalCarat(inputValue);
-            }
-          }}
-          placeholder="проба металу..."
-        />
-        <div className="total_title">Вага металу яка необхідно дадати: </div>
-        <div className="total_value">
+      <CalcInput
+        value={addedMetalCarat}
+        onChangeValue={setAddedMetalCarat}
+        placeholder={"проба..."}
+        title={
+          "Введіть пробу металу який додається (якщо 0 то це означає лігатура):"
+        }
+        label={"added_metal_carat"}
+      />
+      <div className="total-holder">
+        <div className="total-holder__title">
+          Вага металу яка необхідно дадати:
+        </div>
+        <div className="total-holder__value">
           {Math.floor(totalWeight * 100) / 100} g
+        </div>
+      </div>
+      <div className="total-holder">
+        <div className="total-holder__title">Загальна вага металу:</div>
+        <div className="total-holder__value">
+          {Math.floor(totalWeight * 100) / 100 +
+            Math.floor(currentMetalWeight * 100) / 100}
+          g
         </div>
       </div>
     </div>

@@ -3,10 +3,12 @@ import CaratCalculator from "./pages/CaratCalculator/CaratCalculator";
 
 function App() {
   return (
-    <main className="main">
-      <h1>Помічник Ювеліра</h1>
-      <CaratCalculator />
-    </main>
+    <>
+      <header className="header">Помічник Ювеліра</header>
+      <main className="container">
+        <CaratCalculator />
+      </main>
+    </>
   );
 }
 

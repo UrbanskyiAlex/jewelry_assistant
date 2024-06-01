@@ -1,26 +1,38 @@
-.carat {
-  background-color: rgb(70, 70, 70);
-  color: rgb(255, 255, 255);
+.carat-calc {
+  background-color: rgb(221, 221, 221);
+  color: rgb(0, 0, 0);
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 15px;
 }
-.title {
-  font-size: 16px;
-  padding: 10px 0;
-  text-decoration: underline;
+.carat-calc__title {
+  font-size: 24px;
+  font-weight: 600;
 }
-.input_lable {
-  font-size: 12px;
-  padding-right: 20px;
+
+.carat-calc__inputHolder {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-.total_title {
-  font-size: 20px;
-  padding: 15px 0;
+.total-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
 }
-.total_value {
+.total-holder__title {
+  font-size: 18px;
+}
+.total-holder__value {
   font-size: 25px;
   color: black;
   background-color: rgb(201, 200, 200);
   display: inline-block;
   padding: 5px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  min-width: 120px;
 }
