@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./CaratCalculator.css";
 
 function CaratCalculator() {
-  const [currentMetalCarat, setCurrentMetalCarat] = useState(0);
-  const [currentMetalWeight, setCurrentMetalWeight] = useState(0);
+  const [currentMetalCarat, setCurrentMetalCarat] = useState("");
+  const [currentMetalWeight, setCurrentMetalWeight] = useState("");
 
-  const [requiredCarat, setRequiredCarat] = useState(0);
-  const [addedMetalCarat, setAddedMetalCarat] = useState(0);
+  const [requiredCarat, setRequiredCarat] = useState("");
+  const [addedMetalCarat, setAddedMetalCarat] = useState("");
   const [totalWeight, setTotalWeight] = useState(0);
 
   useEffect(() => {
@@ -16,11 +16,21 @@ function CaratCalculator() {
         ((requiredCarat / 1000 - currentMetalCarat / 1000) /
           (addedMetalCarat / 1000 - requiredCarat / 1000));
       console.log("Часика чистого у вхідному металі", needMetal);
-      setTotalWeight(needMetal);
+      if (needMetal > 0) {
+        setTotalWeight(needMetal);
+      } else {
+        setTotalWeight(0);
+      }
     } else {
       setTotalWeight(0);
     }
   }, [currentMetalCarat, currentMetalWeight, requiredCarat, addedMetalCarat]);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "+" || e.key === "-") {
+      e.preventDefault();
+    }
+  };
 
   return (
     <div className="carat">
@@ -34,7 +44,24 @@ function CaratCalculator() {
         <input
           id="current_metal_carat"
           type="number"
-          onChange={(e) => setCurrentMetalCarat(e.target.value)}
+          value={currentMetalCarat}
+          onKeyDown={handleKeyDown}
+          onChange={(e) => {
+            const inputValue = e.target.value;
+
+            // Видаляємо непотрібні символи
+            if (/[^0-9]/.test(inputValue)) {
+              return;
+            }
+
+            // Перевіряємо діапазон від 0 до 999
+            if (
+              inputValue === "" ||
+              (Number(inputValue) >= 0 && Number(inputValue) <= 999)
+            ) {
+              setCurrentMetalCarat(inputValue);
+            }
+          }}
           placeholder="проба металу..."
         />
       </div>
@@ -46,6 +73,7 @@ function CaratCalculator() {
         <input
           id="current_metal_weight"
           type="number"
+          onKeyDown={handleKeyDown}
           placeholder="вага металу..."
           onChange={(e) => setCurrentMetalWeight(e.target.value)}
         />
@@ -59,7 +87,25 @@ function CaratCalculator() {
         <input
           id="required_metal_carat"
           type="number"
-          onChange={(e) => setRequiredCarat(e.target.value)}
+          value={requiredCarat}
+          onKeyDown={handleKeyDown}
+          onChange={(e) => {
+            const inputValue = e.target.value;
+
+            // Видаляємо непотрібні символи
+            if (/[^0-9]/.test(inputValue)) {
+              return;
+            }
+
+            // Перевіряємо діапазон від 0 до 999
+            if (
+              inputValue === "" ||
+              (Number(inputValue) >= 0 && Number(inputValue) <= 999)
+            ) {
+              setRequiredCarat(inputValue);
+            }
+          }}
+          placeholder="необхідна проба металу..."
         />
       </div>
       <div>
@@ -72,10 +118,30 @@ function CaratCalculator() {
         <input
           id="added_metal_carat"
           type="number"
-          onChange={(e) => setAddedMetalCarat(e.target.value)}
+          onKeyDown={handleKeyDown}
+          value={addedMetalCarat}
+          onChange={(e) => {
+            const inputValue = e.target.value;
+
+            // Видаляємо непотрібні символи
+            if (/[^0-9]/.test(inputValue)) {
+              return;
+            }
+
+            // Перевіряємо діапазон від 0 до 999
+            if (
+              inputValue === "" ||
+              (Number(inputValue) >= 0 && Number(inputValue) <= 999)
+            ) {
+              setAddedMetalCarat(inputValue);
+            }
+          }}
+          placeholder="проба металу..."
         />
         <div className="total_title">Вага металу яка необхідно дадати: </div>
-        <div className="total_value">{totalWeight.toFixed(2)} g</div>
+        <div className="total_value">
+          {Math.floor(totalWeight * 100) / 100} g
+        </div>
       </div>
     </div>
   );
