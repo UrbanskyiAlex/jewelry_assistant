@@ -1,6 +1,13 @@
 import "./CalcInput.css";
 
-function CalcInput({ value, onChangeValue, placeholder, title, label }) {
+function CalcInput({
+  value,
+  onChangeValue,
+  placeholder,
+  title,
+  label,
+  subtitle = "",
+}) {
   const handleKeyDown = (e) => {
     if (e.key === "+" || e.key === "-") {
       e.preventDefault();
@@ -9,7 +16,8 @@ function CalcInput({ value, onChangeValue, placeholder, title, label }) {
   return (
     <div className="carat-calc__inputHolder">
       <label for={label} className="carat-calc__input-lable">
-        {title}
+        <p className="input-lable-title">{title}</p>
+        <p className="input-lable-subtitle">{subtitle}</p>
       </label>
       <input
         className="carat-calc__input"

@@ -10,13 +10,13 @@
   font-weight: 600;
 }
 
-.carat-calc__inputHolder {
+/* .carat-calc__inputHolder {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
-}
+} */
 .total-holder {
   display: flex;
   justify-content: space-between;

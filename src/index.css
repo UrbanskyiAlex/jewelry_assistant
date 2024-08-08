@@ -26,6 +26,11 @@
   font-style: normal;
   font-display: swap;
 }
+* {
+  padding: 0%;
+  margin: 0;
+  border: 0;
+}
 /* Указываем box sizing */
 *,
 *::before,
@@ -55,8 +60,12 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  line-height: 1;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   min-height: 100vh;

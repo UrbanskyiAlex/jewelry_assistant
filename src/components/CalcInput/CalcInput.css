@@ -7,10 +7,14 @@
 }
 
 .carat-calc__input-lable {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
-  padding-right: 20px;
-  text-align: center;
+}
+.input-lable-title {
+  text-align: left;
+}
+.input-lable-subtitle {
+  font-size: 12px;
 }
 
 .carat-calc__input {

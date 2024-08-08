@@ -15,7 +15,7 @@ function CaratCalculator() {
         currentMetalWeight *
         ((requiredCarat / 1000 - currentMetalCarat / 1000) /
           (addedMetalCarat / 1000 - requiredCarat / 1000));
-      console.log("Часика чистого у вхідному металі", needMetal);
+      console.log("Частка чистого у вхідному металі", needMetal);
       if (needMetal > 0) {
         setTotalWeight(needMetal);
       } else {
@@ -40,7 +40,7 @@ function CaratCalculator() {
         onChangeValue={setCurrentMetalCarat}
         placeholder={"проба..."}
         // title={"Введіть пробу металу яку потрібно переплавити:"}
-        title={"Проба лому:"}
+        title={"Проба лому"}
         label={"current_metal_carat"}
       />
       <div className="carat-calc__inputHolder">
@@ -48,7 +48,7 @@ function CaratCalculator() {
           Введіть вагу металу яку потрібно переплавити:
         </label> */}
         <label for="current_metal_weight" className="carat-calc__input-lable">
-          Вага лому:
+          Вага лому
         </label>
         <input
           id="current_metal_weight"
@@ -64,7 +64,7 @@ function CaratCalculator() {
         onChangeValue={setRequiredCarat}
         placeholder={"проба..."}
         // title={"Введіть пробу металу яку потрібно отримати:"}
-        title={"Цільова проба:"}
+        title={"Цільова проба"}
         label={"required_metal_carat"}
       />
 
@@ -75,7 +75,8 @@ function CaratCalculator() {
         // title={
         //   "Введіть пробу металу який додається (якщо 0 то це означає лігатура):"
         // }
-        title={"Додана проба (якщо 0 то це означає лігатура):"}
+        title={"Проба доданого металу"}
+        subtitle={"(якщо 0 то це означає лігатура)"}
         label={"added_metal_carat"}
       />
       <div className="total-holder">
