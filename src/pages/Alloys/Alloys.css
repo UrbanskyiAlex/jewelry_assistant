@@ -33,19 +33,19 @@
   font-size: 18px;
 }
 
-.item-rose {
+.alloy-rose {
   background-color: rgb(246, 49, 82);
   color: rgb(255, 255, 255);
 }
-.item-pink {
+.alloy-pink {
   background-color: pink;
   color: black;
 }
-.item-yellow {
+.alloy-yellow {
   background-color: yellow;
   color: black;
 }
-.item-green {
+.alloy-green {
   background-color: greenyellow;
   color: black;
 }

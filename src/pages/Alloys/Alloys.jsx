@@ -8,7 +8,7 @@ function Alloys() {
         Для досягнення різних кольорів золота використовується різне
         співвідношення міді та срібла в сплаві з чистим золотом.
       </div>
-      <div className="alloy__item item-rose">
+      <div className="alloy__item alloy-rose">
         <div className="alloy__title">Червоне золото (Rose Gold)</div>
         <div className="alloy__description">
           Червоне золото має високу частку міді, що надає йому червонуватий
@@ -19,7 +19,7 @@ function Alloys() {
           <p className="alloy__formula-item">41.5% міді</p>
         </div>
       </div>
-      <div className="alloy__item item-pink">
+      <div className="alloy__item alloy-pink">
         <div className="alloy__title">Рожеве золото (Pink Gold)</div>
         <div className="alloy__description">
           Рожеве золото має трохи менше міді, ніж червоне золото.
@@ -30,7 +30,7 @@ function Alloys() {
           <p className="alloy__formula-item">10.3% срібла</p>
         </div>
       </div>
-      <div className="alloy__item item-yellow">
+      <div className="alloy__item alloy-yellow">
         <div className="alloy__title">Жовте золото (Yellow Gold)</div>
         <div className="alloy__description">
           Жовте золото має збалансоване співвідношення міді та срібла для
@@ -42,7 +42,7 @@ function Alloys() {
           <p className="alloy__formula-item">20.75% срібла</p>
         </div>
       </div>
-      <div className="alloy__item item-green">
+      <div className="alloy__item alloy-green">
         <div className="alloy__title">Зелене золото (Green Gold)</div>
         <div className="alloy__description">
           Зелене золото містить більше срібла і зовсім не містить міді.
@@ -52,7 +52,7 @@ function Alloys() {
           <p className="alloy__formula-item">41.5% срібла</p>
         </div>
       </div>
-      <div className="alloy__item item-white">
+      <div className="alloy__item alloy-white">
         <div className="alloy__title">Білое золото (White Gold)</div>
         <div className="alloy__description">
           Біле золото містить метали, що надають сплаву білий або сріблястий

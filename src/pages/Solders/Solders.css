@@ -1,2 +1,27 @@
 .solders {
+  padding-top: 10px;
+}
+.solders__description {
+  font-size: 14px;
+  text-align: center;
+}
+.solder__item {
+  margin-top: 10px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(206, 205, 205);
+}
+.solder__title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.solder__formula {
+  padding-top: 10px;
+}
+.solder__formula-item {
+  padding: 3px 10px;
+  font-size: 18px;
+}
+.solder__formula-item span {
+  font-weight: 600;
 }
