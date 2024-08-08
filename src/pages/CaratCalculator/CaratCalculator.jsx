@@ -39,12 +39,16 @@ function CaratCalculator() {
         value={currentMetalCarat}
         onChangeValue={setCurrentMetalCarat}
         placeholder={"проба..."}
-        title={"Введіть пробу металу яку потрібно переплавити:"}
+        // title={"Введіть пробу металу яку потрібно переплавити:"}
+        title={"Проба лому:"}
         label={"current_metal_carat"}
       />
       <div className="carat-calc__inputHolder">
-        <label for="current_metal_weight" className="carat-calc__input-lable">
+        {/* <label for="current_metal_weight" className="carat-calc__input-lable">
           Введіть вагу металу яку потрібно переплавити:
+        </label> */}
+        <label for="current_metal_weight" className="carat-calc__input-lable">
+          Вага лому:
         </label>
         <input
           id="current_metal_weight"
@@ -59,7 +63,8 @@ function CaratCalculator() {
         value={requiredCarat}
         onChangeValue={setRequiredCarat}
         placeholder={"проба..."}
-        title={"Введіть пробу металу яку потрібно отримати:"}
+        // title={"Введіть пробу металу яку потрібно отримати:"}
+        title={"Цільова проба:"}
         label={"required_metal_carat"}
       />
 
@@ -67,15 +72,17 @@ function CaratCalculator() {
         value={addedMetalCarat}
         onChangeValue={setAddedMetalCarat}
         placeholder={"проба..."}
-        title={
-          "Введіть пробу металу який додається (якщо 0 то це означає лігатура):"
-        }
+        // title={
+        //   "Введіть пробу металу який додається (якщо 0 то це означає лігатура):"
+        // }
+        title={"Додана проба (якщо 0 то це означає лігатура):"}
         label={"added_metal_carat"}
       />
       <div className="total-holder">
-        <div className="total-holder__title">
+        {/* <div className="total-holder__title">
           Вага металу яка необхідно дадати:
-        </div>
+        </div> */}
+        <div className="total-holder__title">Вага доданого металу:</div>
         <div className="total-holder__value">
           {Math.floor(totalWeight * 100) / 100} g
         </div>
