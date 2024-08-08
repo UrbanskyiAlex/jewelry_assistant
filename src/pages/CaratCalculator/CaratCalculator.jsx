@@ -80,9 +80,6 @@ function CaratCalculator() {
         label={"added_metal_carat"}
       />
       <div className="total-holder">
-        {/* <div className="total-holder__title">
-          Вага металу яка необхідно дадати:
-        </div> */}
         <div className="total-holder__title">Вага доданого металу:</div>
         <div className="total-holder__value">
           {Math.floor(totalWeight * 100) / 100} g
