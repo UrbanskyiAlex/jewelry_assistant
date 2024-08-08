@@ -4,6 +4,7 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Alloys from "./pages/Alloys/Alloys";
 import Solders from "./pages/Solders/Solders";
+import Ring from "./pages/RingCalculator/RingCalculator";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<CaratCalculator />} />
           <Route path="alloys" element={<Alloys />} />
           <Route path="solders" element={<Solders />} />
+          <Route path="ring" element={<Ring />} />
         </Route>
       </Routes>
     </>

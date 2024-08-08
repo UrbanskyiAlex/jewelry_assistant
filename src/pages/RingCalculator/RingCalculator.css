@@ -1,0 +1,16 @@
+.ring {
+  padding-top: 10px;
+}
+.ring__calc {
+  background-color: rgb(221, 221, 221);
+  color: rgb(0, 0, 0);
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 15px;
+}
+.ring__title {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}

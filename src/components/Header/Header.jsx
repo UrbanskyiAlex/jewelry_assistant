@@ -24,6 +24,11 @@ function Header() {
               припої
             </NavLink>
           </li>
+          <li className="menu__item">
+            <NavLink to="/ring" className={setActive}>
+              обручка
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
