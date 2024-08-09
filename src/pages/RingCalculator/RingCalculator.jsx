@@ -6,7 +6,14 @@ import ParamInput from "../../components/ParamInput/ParamInput";
 function RingCalculator() {
   const [ringSize, setRingSize] = useState("");
   const [thickness, setThickness] = useState("");
-  console.log(ringSize + thickness);
+  const [width, setWidth] = useState("");
+
+  const length =
+    Number(ringSize) !== 0 && Number(thickness) !== 0
+      ? Math.floor((Number(ringSize) + Number(thickness)) * 3.14 * 100) / 100
+      : 0;
+  console.log("thickness -->", thickness);
+  console.log("length--->", length);
   return (
     <div className="ring">
       <div className="ring__calc">
@@ -27,12 +34,15 @@ function RingCalculator() {
         />
         <div className="total-holder">
           <div className="total-holder__title">Довжина заготовки:</div>
-          <div className="total-holder__value">
-            {Math.floor((Number(ringSize) + Number(thickness)) * 3.14 * 100) /
-              100}{" "}
-            g
-          </div>
+          <div className="total-holder__value">{length} cm</div>
         </div>
+        <ParamInput
+          value={width}
+          onChangeValue={setWidth}
+          placeholder={"ширина..."}
+          title={"Ширина каблучки"}
+          label={"required_width"}
+        />
       </div>
     </div>
   );
