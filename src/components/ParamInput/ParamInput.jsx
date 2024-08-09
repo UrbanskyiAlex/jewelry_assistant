@@ -29,19 +29,8 @@ function ParamInput({
         onKeyDown={handleKeyDown}
         onChange={(e) => {
           const inputValue = e.target.value;
-          //   if (
-          //     /^\d*\.?\d*$/.test(inputValue) &&
-          //     Number(inputValue) >= 0 &&
-          //     Number(inputValue) <= 33
-          //   ) {
-          //     onChangeValue(inputValue);
-          //   }
-          // Видаляємо непотрібні симв
-          //   if (/[^0-9]/.test(inputValue)) {
-          //     return;
-          //   }
-          // Перевіряємо діапазон від 0 до 999
-          if (Number(inputValue) >= 0 && Number(inputValue) <= 33) {
+          // Перевіряємо діапазон від 0 до 100
+          if (Number(inputValue) >= 0 && Number(inputValue) <= 100) {
             onChangeValue(inputValue);
           }
           console.log("inputValue--->", inputValue);
