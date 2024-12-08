@@ -5,10 +5,12 @@ import Layout from "./components/Layout/Layout";
 import Alloys from "./pages/Alloys/Alloys";
 import Solders from "./pages/Solders/Solders";
 import Ring from "./pages/RingCalculator/RingCalculator";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
     <>
+      <Analytics />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<CaratCalculator />} />
