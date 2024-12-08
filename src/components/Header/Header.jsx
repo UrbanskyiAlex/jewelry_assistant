@@ -6,7 +6,7 @@ function Header() {
   const setActive = ({ isActive }) => (isActive ? "active-link" : "menu__link");
   return (
     <header className="header">
-      <div className="header__title">Помічник Ювеліра</div>
+      <div className="header__title">Помічник Ювеліра beta v.1.1.0</div>
       <nav className="header__menu menu">
         <ul className="menu__list">
           <li className="menu__item">
